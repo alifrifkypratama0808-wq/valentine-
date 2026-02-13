@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine Silmiik 💗</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Comic Sans MS', cursive;
+  background:#fff0f5;
+  text-align:center;
+}
+
+/* PASSWORD */
+#lock{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+input{
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  text-align:center;
+}
+
+button{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  background:#ff5c8a;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#ff2e6e;
+}
+
+/* CONTENT */
+#content{
+  display:none;
+  padding-bottom:50px;
+}
+
+h1{
+  color:#ff5c8a;
+}
+
+img{
+  width:220px;
+  margin:15px;
+  animation:pop 0.6s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(0.8);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+.text{
+  font-size:18px;
+  margin:12px 30px;
+  color:#444;
+  line-height:1.6;
+}
+
+.heart{
+  font-size:26px;
+  animation:beat 1s infinite;
+}
+
+@keyframes beat{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+
+/* GIFT */
+#gift{
+  font-size:80px;
+  cursor:pointer;
+  animation:beat 1s infinite;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD PAGE -->
+<div id="lock">
+  <h2>💌 Masukkan Password</h2>
+  <input type="password" id="pw" placeholder="password...">
+  <button onclick="cek()">Masuk</button>
+  <p style="font-size:14px;color:#999;">hint: namanya kamu 😉</p>
+</div>
+
+<!-- MUSIC -->
+<audio id="musik" loop>
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<!-- MAIN CONTENT -->
+<div id="content">
+  <h1>Happy Valentine 💗</h1>
+  <p>Klik hadiahnya dulu ya, Silmina 🎁</p>
+
+  <div id="gift" onclick="buka()">🎁</div>
+
+  <div id="isi" style="display:none;">
+
+    <img src="img/1.png">
+    <div class="text"><b>Happy Valentine, DOERR 🤍</b></div>
+
+    <img src="img/2.png">
+    <div class="text">
+      Terima kasih yaa…<br>
+      sudah mau bertahan sama aku ini,<br>
+      padahal banyaaak banget kurangnya 😅
+    </div>
+
+    <img src="img/3.png">
+    <div class="text">
+      Maaf ya kalau aku belum bisa ngasih segalanya ke kamu,<br>
+      belum bisa effort yang berlebih,<br>
+      gak kayak orang-orang ke pacarnya.
+    </div>
+
+    <img src="img/4.png">
+    <div class="text">
+      Tapi satu hal yang pasti,<br>
+      rasa aku ke kamu itu serius dan tulus 💗
+    </div>
+
+    <img src="img/5.png">
+    <div class="text">
+      Makasih yaa…<br>
+      makasih banyaaak banget 🤍
+    </div>
+
+    <img src="img/6.png">
+    <div class="text">
+      Oh iyaaa…<br>
+      selamat yaa, bentar lagi kamu lulus 🎓<br>
+      semoga semua yang kamu semogakan bisa kejadian.
+    </div>
+
+    <img src="img/7.png">
+    <div class="text">
+      Semoga hal-hal baik selalu<br>
+      senantiasa bersama kamu 🤍
+    </div>
+
+    <img src="img/8.png">
+    <div class="text">
+      Udah itu ajaaa…<br>
+      bingung ngomong apalagi 😆<br>
+      eh iya, hadiah nanti <b>otw yaaa~ 🎁</b>
+    </div>
+
+    <div class="text heart">
+      SEKALI LAGI…<br>
+      💕 HAPPYY VALENTINE SILMIIIK 💕
+    </div>
+
+  </div>
+</div>
+
+<script>
+function cek(){
+  let pw=document.getElementById("pw").value;
+  if(pw==="silmina"){
+    document.getElementById("lock").style.display="none";
+    document.getElementById("content").style.display="block";
+    document.getElementById("musik").play();
+  }else{
+    alert("Password salah 😝");
+  }
+}
+
+function buka(){
+  document.getElementById("gift").style.display="none";
+  document.getElementById("isi").style.display="block";
+}
+</script>
+
+</body>
+</html>
